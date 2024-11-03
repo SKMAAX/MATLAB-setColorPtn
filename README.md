@@ -7,5 +7,4 @@ A function to generate a color pattern for use with colororder and an examples.
 ・PoleZeroPattern.m(or .mlx) : Other example for usage setColorPtn function.
 
 
-↓ Details(in Japanease)
-https://qiita.com/WandererEng/private/3f029473dfa5989ec195
+Details(in Japanease) : https://qiita.com/WandererEng/private/3f029473dfa5989ec195
