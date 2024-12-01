@@ -42,6 +42,11 @@ arguments
 end
 
 % item_listが一次元配列であることのチェック
+if ~isempty(item_list)
+    if ~isvector(item_list)
+        error('item_list は一次元配列（行ベクトルまたは列ベクトル）でなければなりません。');
+    end
+end
 
 hsv_num = 256; % HSV色相256色を使用
 
