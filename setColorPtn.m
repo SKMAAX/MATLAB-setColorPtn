@@ -15,14 +15,14 @@ function [cptn,cptn_idx] = setColorPtn(item_list,num_ptn,color_div,color_border)
 % 両方の構成が指定された場合、関数は'item_list'によって提供された構成を優先します。
 %
 % 入力引数：
-% item_list : 各グループの色の数を指定するベクトル。指定された場合、他の入力を上書きします。(デフォルト: [])
-% num_ptn : (オプション) 生成する色の総数。item_list' が指定されていない場合に使用されます。(デフォルト: 1)
-% color_div : (オプション) 色を分割する色グループの数。item_list' が指定されていない場合に使用されます。(デフォルト: 1)
-% color_border : (オプション) ボーダー領域とみなす色グループの割合 (0 から 1)。
+% - item_list : 各グループの色の数を指定するベクトル。指定された場合、他の入力を上書きします。(デフォルト: [])
+% - num_ptn : (オプション) 生成する色の総数。item_list' が指定されていない場合に使用されます。(デフォルト: 1)
+% - color_div : (オプション) 色を分割する色グループの数。item_list' が指定されていない場合に使用されます。(デフォルト: 1)
+% - color_border : (オプション) ボーダー領域とみなす色グループの割合 (0 から 1)。
 %  0にするとボーダー領域なしを意味し、1に近い場合ほぼすべての色がボーダー領域で、ごく限られた領域から色を取得します。(デフォルト： 2/3)
 %  つまり'color_border'パラメータは、グループをどの程度区別して表示するかを制御します。値が小さいとグループ間の区別が少なくなり、値が大きいと同じグループ内の色の区別が少なくなります。
 %
-%出力引数: 
+% 出力引数: 
 % - cptn : プロットの色を指定するために colororder で使用できる色配列。
 % - cptn_idx : HSV 色空間から選択された色のインデックス。
 % 
@@ -91,9 +91,9 @@ cptn = vertcat(color_ptn{:});
 cptn_idx = horzcat(color_idx{:})';
 
 % % テスト用 HSVのどの部分を取ってきているか可視化
-% scatter(cptn_idx/hsv_ptn,linspace(0,0,length(cptn)),100, cptn, 'filled');
+% scatter(cptn_idx/hsv_num,linspace(0,0,length(cptn)),100, cptn, 'filled');
 % hold on;
-% scatter(linspace(0,1,hsv_ptn),linspace(0.2,0.2,hsv_ptn),100, hsv_vec, 'filled');
+% scatter(linspace(0,1,hsv_num),linspace(0.2,0.2,hsv_num),100, hsv_vec, 'filled');
 % text(0.2,0.1,sprintf('↑から%dグループ分を抽出したもの↓',color_div),'FontSize',14)
 % hold off;
 end
